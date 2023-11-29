@@ -54,7 +54,7 @@ jobs:
 #        with:
 #          args: '-d model -o output'
       - name: 'Run MarkMySAMM to convert to Markdown'
-        uses: owaspsamm/MarkMySAMM@0.0.1
+        uses: owaspsamm/MarkMySAMM
         with:
           input_directory: 'model'
           output_directory: 'output'
