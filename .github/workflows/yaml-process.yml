@@ -58,13 +58,13 @@ jobs:
         with:
           input_directory: 'model'
           output_directory: 'output'
-      - name: 'Move generated files to common directory structure'
-        run: |
-          mkdir -p build/business-function/practice/stream
-          BASE=output/markdown
-          cp "$BASE"/{Design.md,Governance.md,Implementation.md,Operations.md,Verification.md} build/business-function
-          cp "$BASE"/*-??-?.md build/business-function/practice/stream
-          cp "$BASE"/*-??.md build/business-function/practice
+#      - name: 'Move generated files to common directory structure'
+#        run: |
+#          mkdir -p build/business-function/practice/stream
+#          BASE=output/markdown
+#          cp "$BASE"/{Design.md,Governance.md,Implementation.md,Operations.md,Verification.md} build/business-function
+#          cp "$BASE"/*-??-?.md build/business-function/practice/stream
+#          cp "$BASE"/*-??.md build/business-function/practice
       - name: 'Move translated model files back into language directory'
         run: mv output/* output/fr/
       - name: Deploy
