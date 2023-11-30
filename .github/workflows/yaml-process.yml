@@ -57,8 +57,8 @@ jobs:
         uses: owaspsamm/MarkMySAMM@develop
         with:
 #          args: "-i /github/workflow/fr/model -o /github/workflow/output"
-          input_directory: '/github/workflow/fr/model'
-          output_directory: '/github/workflow/output'
+          input_directory: '/github/workspace/fr/model'
+          output_directory: '/github/workspace/output'
 #      - name: 'Move generated files to common directory structure'
 #        run: |
 #          mkdir -p build/business-function/practice/stream
