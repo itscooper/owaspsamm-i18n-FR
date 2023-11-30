@@ -56,7 +56,7 @@ jobs:
       - name: 'Run MarkMySAMM to convert to Markdown'
         uses: owaspsamm/MarkMySAMM@develop
         with:
-          input_directory: 'model'
+          input_directory: 'fr/model'
           output_directory: 'output'
 #      - name: 'Move generated files to common directory structure'
 #        run: |
