@@ -56,8 +56,9 @@ jobs:
       - name: 'Run MarkMySAMM to convert to Markdown'
         uses: owaspsamm/MarkMySAMM@develop
         with:
-          input_directory: 'fr/model'
-          output_directory: 'output'
+          args: "-i /github/workflow/fr/model -o /github/workflow/output"
+#          input_directory: ''
+#          output_directory: 'output'
 #      - name: 'Move generated files to common directory structure'
 #        run: |
 #          mkdir -p build/business-function/practice/stream
