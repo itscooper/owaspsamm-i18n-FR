@@ -77,7 +77,7 @@ jobs:
           REPO: self
           BRANCH: markdown/${{ env.release_name }}
           FOLDER: output
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
           SQUASH_HISTORY: true
   # after changing something, we need to trigger the website build
 #  trigger-website-build:
