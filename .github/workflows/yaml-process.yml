@@ -46,9 +46,12 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         run: |
           echo "release_name=${{ inputs.release }}" >> $GITHUB_ENV
-      - name: 'Create output dir and copy files to override spaces in directories'
+      - name: 'Create output dir'
         run: |
           mkdir output
+      - name: 'Create language-specific dir'
+        run: |
+          mkdir output/fr
 #      - name: 'Generate model for website'
 #        uses: docker://fzipi/owasp-samm-preprocess-yaml:version-0.8.1
 #        with:
@@ -58,7 +61,7 @@ jobs:
         with:
 #          args: "-i /github/workflow/fr/model -o /github/workflow/output"
           input_directory: '/github/workspace/fr/model'
-          output_directory: '/github/workspace/output'
+          output_directory: '/github/workspace/output/fr'
 #      - name: 'Move generated files to common directory structure'
 #        run: |
 #          mkdir -p build/business-function/practice/stream
@@ -66,8 +69,8 @@ jobs:
 #          cp "$BASE"/{Design.md,Governance.md,Implementation.md,Operations.md,Verification.md} build/business-function
 #          cp "$BASE"/*-??-?.md build/business-function/practice/stream
 #          cp "$BASE"/*-??.md build/business-function/practice
-      - name: 'Move translated model files back into language directory'
-        run: mv output/* output/fr/
+#      - name: 'Move translated model files back into language directory'
+#        run: mv output/* output/fr/
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
