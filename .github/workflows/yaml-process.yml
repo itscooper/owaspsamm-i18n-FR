@@ -57,7 +57,7 @@ jobs:
 #        with:
 #          args: '-d model -o output'
       - name: 'Run MarkMySAMM to convert to Markdown'
-        uses: owaspsamm/MarkMySAMM@develop
+        uses: owaspsamm/MarkMySAMM@0.0.2
         with:
 #          args: "-i /github/workflow/fr/model -o /github/workflow/output"
           input_directory: '/github/workspace/fr/model'
